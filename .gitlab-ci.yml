@@ -1,5 +1,4 @@
 stages:
-  - setup
   - build
   - test
   - deploy
@@ -10,7 +9,7 @@ image: alpine
 setup:
   stage: setup
   script:
-    - apk add --update curl
+    - apk --no-cache add curl
 
 build:
   stage: build
