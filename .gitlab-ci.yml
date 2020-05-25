@@ -9,6 +9,7 @@ image: debian
 build:
   stage: build
   script:
+    - apt-get update && apt-get install curl
     - echo "This job builds something."
 
 test:
