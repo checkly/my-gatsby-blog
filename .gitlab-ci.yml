@@ -4,7 +4,7 @@ stages:
   - deploy
   - trigger_checkly
 
-image: debian
+image: curlimages/curl
 
 build:
   stage: build
