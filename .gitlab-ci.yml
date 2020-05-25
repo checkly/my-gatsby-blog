@@ -26,7 +26,6 @@ run_checkly:
   script:
     - echo "Deployment finished."
     # Call Checkly trigger
-    - curl -X GET https://api.checklyhq.com/checks/9b169dcb-a24a-475e-90b2-3bbc76c1b74a/trigger/${CHECKLY_TOKEN}
-    # - curl "https://api-test.checklyhq.com/check-groups/4/trigger/${CHECKLY_TOKEN}" > ${PWD}/checkly.json
+    - curl -X GET https://api.checklyhq.com/checks/9b169dcb-a24a-475e-90b2-3bbc76c1b74a/trigger/$CHECKLY_TOKEN
     # Exit with an error status if we find more than 0 "hasFailures: true" in the output
     - if [ $(grep -c \'"hasFailures":true\' $PWD/checkly.json) -ne 0 ]; then exit 1; fi
