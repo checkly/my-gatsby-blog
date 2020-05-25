@@ -1,16 +1,10 @@
 stages:
-  - setup
   - build
   - test
   - deploy
   - trigger_checkly
 
-image: alpine
-
-setup:
-  stage: setup
-  script:
-    - apk --no-cache add curl
+image: debian
 
 build:
   stage: build
