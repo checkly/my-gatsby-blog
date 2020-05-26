@@ -31,4 +31,4 @@ run_checkly:
     # - curl https://api.checklyhq.com/checks/9b169dcb-a24a-475e-90b2-3bbc76c1b74a/trigger/$CHECKLY_TOKEN 
     - cat $PWD/checkly.json
     # Exit with an error status if we find more than 0 "hasFailures: true" in the output
-    - if [ $(grep -c \'"hasFailures":true\' $PWD/checkly.json) -ne 0 ]; then exit 1; fi
+    - if [ $(grep -c '"hasFailures":true' $PWD/checkly.json) -ne 0 ]; then exit 1; fi
